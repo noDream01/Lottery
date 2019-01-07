@@ -36,13 +36,18 @@ public class LotteryStart {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(id, title, limit);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LotteryStart that = (LotteryStart) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(title, that.title) &&
+                Objects.equals(limit, that.limit);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(id, title, limit);
     }
 
     public Long getId() {
