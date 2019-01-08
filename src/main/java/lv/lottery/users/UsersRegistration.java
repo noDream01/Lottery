@@ -2,14 +2,21 @@ package lv.lottery.users;
 
 import java.util.Objects;
 
-public class AddUsers {
+public class UsersRegistration {
 
     public Long id;
     public String email;
     public Byte age;
     public String code;
 
-    public AddUsers(){
+    public UsersRegistration(Long id, String email, Byte age, String code) {
+        this.id = id;
+        this.email = email;
+        this.age = age;
+        this.code = code;
+    }
+
+    public UsersRegistration(){
 
     }
 
@@ -49,11 +56,11 @@ public class AddUsers {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AddUsers addUsers = (AddUsers) o;
-        return Objects.equals(id, addUsers.id) &&
-                Objects.equals(email, addUsers.email) &&
-                Objects.equals(age, addUsers.age) &&
-                Objects.equals(code, addUsers.code);
+        UsersRegistration usersRegistration = (UsersRegistration) o;
+        return Objects.equals(id, usersRegistration.id) &&
+                Objects.equals(email, usersRegistration.email) &&
+                Objects.equals(age, usersRegistration.age) &&
+                Objects.equals(code, usersRegistration.code);
     }
 
     @Override

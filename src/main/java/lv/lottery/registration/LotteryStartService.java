@@ -7,20 +7,20 @@ import java.util.*;
 @Component
 public class LotteryStartService {
 
-    private Map<Long, LotteryStart> lotteryStorage = new HashMap<>();
+    private Map<Long, LotteryRegistration> lotteryStorage = new HashMap<>();
     private Long lastId = 0L;
 
 
-    public Long addLottery(LotteryStart lotteryStart){
+    public Long addLottery(LotteryRegistration lotteryRegistration){
         lastId++;
-        lotteryStart.setId(lastId);
-        lotteryStorage.put(lastId, lotteryStart);
+        lotteryRegistration.setId(lastId);
+        lotteryStorage.put(lastId, lotteryRegistration);
 
         return lastId;
 
     }
 
-    public List<LotteryStart> get(){
+    public List<LotteryRegistration> get(){
         return new ArrayList<>(lotteryStorage.values());
     }
 

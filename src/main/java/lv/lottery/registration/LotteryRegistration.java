@@ -2,13 +2,13 @@ package lv.lottery.registration;
 
 import java.util.Objects;
 
-public class LotteryStart {
+public class LotteryRegistration {
 
     private Long id;
     private String title;
     private Integer limit;
 
-    public LotteryStart(){
+    public LotteryRegistration(){
 
     }
 
@@ -28,7 +28,7 @@ public class LotteryStart {
         this.limit = limit;
     }
 
-    public LotteryStart(Long id, String title, Integer limit) {
+    public LotteryRegistration(Long id, String title, Integer limit) {
         this.id = id;
         this.title = title;
         this.limit = limit;
@@ -39,7 +39,7 @@ public class LotteryStart {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        LotteryStart that = (LotteryStart) o;
+        LotteryRegistration that = (LotteryRegistration) o;
         return Objects.equals(id, that.id) &&
                 Objects.equals(title, that.title) &&
                 Objects.equals(limit, that.limit);

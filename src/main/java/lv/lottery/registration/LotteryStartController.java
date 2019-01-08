@@ -17,15 +17,15 @@ public class LotteryStartController {
     private LotteryStartService lotteryStartService;
 
     @GetMapping
-    public Collection<LotteryStart> get(){
+    public Collection<LotteryRegistration> get(){
         LOGGER.info("lottery registered");
         return lotteryStartService.get();
 
     }
 
     @PostMapping
-    public void create(@RequestBody LotteryStart lotteryStart){
-        lotteryStartService.addLottery(lotteryStart);
+    public void create(@RequestBody LotteryRegistration lotteryRegistration){
+        lotteryStartService.addLottery(lotteryRegistration);
     }
 
 }
