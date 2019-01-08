@@ -21,3 +21,21 @@ tr.innerHTML =`
     `;
     document.getElementById("table-body").appendChild(tr);
 }
+
+function createLottery() {
+    const title = document.getElementById("title").value;
+    const limit = document.getElementById("limit").value;
+
+    fetch("/start-registration", {
+        method: "post",
+        body: JSON.stringify({
+            title: title,
+            limit: limit
+        }),
+        headers: {
+            "Content-Type": "application/json;charset=UTF-8"
+        }
+    }).then(() => {
+        window.location.href = "/lotteryAdmin.html";
+    });
+}
