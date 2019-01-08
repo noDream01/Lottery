@@ -27,7 +27,12 @@ public class LotteryController {
         lotteryService.addLottery(lotteryRegistration);
     }
     @RequestMapping(value = "/stop-registration", method = RequestMethod.POST)
-    public LotteryRegistration getLotteryById(@RequestBody Long id){
+    public LotteryRegistration getLotteryByIdRegistrationStop(@RequestBody Long id){
+        return lotteryService.get(id);
+    }
+
+    @RequestMapping(value = "/choose-winner", method = RequestMethod.POST)
+    public LotteryRegistration getLotteryByIdStartLottery(@RequestBody Long id){
         return lotteryService.get(id);
     }
 
