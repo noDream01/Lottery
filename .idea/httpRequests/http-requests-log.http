@@ -1,0 +1,410 @@
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-08T115217.200.json
+
+###
+
+POST http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2" }
+
+<> 2019-01-08T115110.200.json
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2" }
+
+<> 2019-01-08T115040.500.json
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2" }
+
+<> 2019-01-08T114758.500.json
+
+###
+
+GET http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2" }
+
+###
+
+POST http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2" }
+
+###
+
+GET http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2" }
+
+###
+
+GET http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2" }
+
+###
+
+POST http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2" }
+
+###
+
+POST http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2" }
+
+###
+
+POST http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2" }
+
+###
+
+GET http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2L" }
+
+<> 2019-01-08T111152.200.json
+
+###
+
+POST http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": "2L" }
+
+<> 2019-01-08T111018.400.json
+
+###
+
+POST http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": 2 }
+
+###
+
+GET http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": 2 }
+
+<> 2019-01-08T110946.200.json
+
+###
+
+POST http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": 2 }
+
+###
+
+GET http://localhost:8080/stop-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "email": "352@gmail.com",      "age": 18,   "code": "asdas323xcf" }
+
+<> 2019-01-08T110901.200.json
+
+###
+
+GET http://localhost:8080/register
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "email": "352@gmail.com",      "age": 18,   "code": "asdas323xcf" }
+
+<> 2019-01-08T110851.200.json
+
+###
+
+GET http://localhost:8080/register
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "email": "352@gmail.com",      "age": 18,   "code": "asdas323xcf" }
+
+<> 2019-01-08T103603.200.json
+
+###
+
+POST http://localhost:8080/register
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "email": "352@gmail.com",      "age": 18,   "code": "asdas323xcf" }
+
+###
+
+POST http://localhost:8080/register
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "email": "owned.by.dz@gmail.com",      "age": 18,   "code": "asdasd892xcf" }
+
+###
+
+GET http://localhost:8080/register
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "New Lottery 2",   "limit": 500222}
+
+<> 2019-01-08T103417.200.json
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "New Lottery 2",   "limit": 500222}
+
+<> 2019-01-07T031154.200.json
+
+###
+
+POST http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "New Lottery 2",   "limit": 500222}
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "New Lottery 2",   "limit": 500222}
+
+<> 2019-01-07T031136.200.json
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "New Lottery 2",   "limit": 500222}
+
+<> 2019-01-07T031051.200.json
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "New Lottery 2",   "limit": 500222}
+
+<> 2019-01-07T012946.200.json
+
+###
+
+POST http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "New Lottery 2",   "limit": 500222}
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "New Lottery 1",   "limit": 500 }
+
+<> 2019-01-07T012931.200.json
+
+###
+
+POST http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "New Lottery 1",   "limit": 500 }
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "smth",   "limit": 500 }
+
+<> 2019-01-07T012909.200.json
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "smth",   "limit": 500 }
+
+<> 2019-01-07T011841.200.json
+
+###
+
+POST http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "smth",   "limit": 500 }
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "Christmas Lottery 4",   "limit": 500 }
+
+<> 2019-01-07T011205.200.json
+
+###
+
+POST http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "Christmas Lottery 4",   "limit": 500 }
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "Christmas Lottery 2",   "limit": 500 }
+
+<> 2019-01-07T011118.200.json
+
+###
+
+POST http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "Christmas Lottery 2",   "limit": 500 }
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "Christmas Lottery 1",   "limit": 1000 }
+
+<> 2019-01-07T011054.200.json
+
+###
+
+POST http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{   "title": "Christmas Lottery 1",   "limit": 1000 }
+
+###
+
+GET http://localhost:8080/start-registration
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-07T010515.200.json
+
+###
+

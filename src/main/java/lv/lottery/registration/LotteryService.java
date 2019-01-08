@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.*;
 
 @Component
-public class LotteryStartService {
+public class LotteryService {
 
     private Map<Long, LotteryRegistration> lotteryStorage = new HashMap<>();
     private Long lastId = 0L;
@@ -22,6 +22,11 @@ public class LotteryStartService {
 
     public List<LotteryRegistration> get(){
         return new ArrayList<>(lotteryStorage.values());
+    }
+
+    public LotteryRegistration get(Long id){
+        return lotteryStorage.get(id);
+
     }
 
 }
