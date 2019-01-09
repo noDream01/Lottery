@@ -23,7 +23,12 @@ public class UserController {
         userService.add(usersRegistration);
     }
     @GetMapping
-    public Collection<UsersRegistration> users() {
+    public Collection<UsersView> users() {
         return userService.users();
+    }
+
+    @PutMapping(value = "/assign")
+    public boolean assign(@RequestParam Long userId, @RequestParam Long lotteryId) {
+        return userService.assign(userId, lotteryId);
     }
 }

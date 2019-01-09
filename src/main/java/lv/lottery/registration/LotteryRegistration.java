@@ -1,12 +1,32 @@
 package lv.lottery.registration;
 
+import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
+@Entity
+@Table(name = "DZ_LOTTERIES")
 public class LotteryRegistration {
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
+    public Long id;
+    @Column(name = "title_lottery")
+    public String title;
+    @Column(name = "limit_users")
+    public Integer limit;
+    @Column(name = "created_date")
+    private Date createdDate;
 
-    private Long id;
-    private String title;
-    private Integer limit;
+    @Override
+    public String toString() {
+        return "LotteryRegistration{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", limit=" + limit +
+                ", createdDate=" + createdDate +
+                '}';
+    }
 
     public LotteryRegistration(){
 
@@ -28,10 +48,11 @@ public class LotteryRegistration {
         this.limit = limit;
     }
 
-    public LotteryRegistration(Long id, String title, Integer limit) {
+    public LotteryRegistration(Long id, String title, Integer limit, Date createdDate) {
         this.id = id;
         this.title = title;
         this.limit = limit;
+        this.createdDate = createdDate;
 
     }
 
@@ -42,12 +63,13 @@ public class LotteryRegistration {
         LotteryRegistration that = (LotteryRegistration) o;
         return Objects.equals(id, that.id) &&
                 Objects.equals(title, that.title) &&
-                Objects.equals(limit, that.limit);
+                Objects.equals(limit, that.limit) &&
+                Objects.equals(createdDate, that.createdDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, limit);
+        return Objects.hash(id, title, limit, createdDate);
     }
 
     public Long getId() {
@@ -56,5 +78,13 @@ public class LotteryRegistration {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 }

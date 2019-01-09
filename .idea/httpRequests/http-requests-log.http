@@ -1,3 +1,69 @@
+GET http://localhost:8080/register?userId=1&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-09T015852.200.json
+
+###
+
+GET http://localhost:8080/register/assign?userId=1&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-09T015842.405.json
+
+###
+
+PUT http://localhost:8080/register/assign?userId=1&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-09T015834.200.json
+
+###
+
+GET http://localhost:8080/register?userId=1&lotteryId=2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-09T015804.200.json
+
+###
+
+GET http://localhost:8080/register?userId=1&lotteryId=2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-09T014250.200.json
+
+###
+
+PUT http://localhost:8080/register/assign?userId=1&lotteryId=2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-09T014143.200.json
+
+###
+
 GET http://localhost:8080/start-registration
 Accept: */*
 Cache-Control: no-cache
