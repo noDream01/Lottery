@@ -8,7 +8,7 @@ import java.util.Objects;
 @Table(name = "DZ_LOTTERIES")
 public class LotteryRegistration {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     public Long id;
     @Column(name = "title_lottery")
@@ -28,9 +28,7 @@ public class LotteryRegistration {
                 '}';
     }
 
-    public LotteryRegistration(){
 
-    }
 
     public String getTitle() {
         return title;
@@ -86,5 +84,8 @@ public class LotteryRegistration {
 
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public LotteryRegistration() {
     }
 }

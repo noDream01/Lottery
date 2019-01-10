@@ -8,7 +8,7 @@ import java.util.Objects;
 public class UsersRegistration {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;
     @Column(name = "email")

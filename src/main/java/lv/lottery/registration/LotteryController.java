@@ -11,9 +11,12 @@ import java.util.Collection;
 @RestController
 public class LotteryController {
     private final static Logger LOGGER = LoggerFactory.getLogger(LotteryController.class);
+    private final LotteryService lotteryService;
 
     @Autowired
-    private LotteryService lotteryService;
+    private LotteryController(LotteryService lotteryService){
+        this.lotteryService = lotteryService;
+    }
 
     @RequestMapping(value = "/start-registration", method = RequestMethod.GET)
     public Collection<LotteryRegistration> get(){
@@ -26,14 +29,14 @@ public class LotteryController {
     public void create(@RequestBody LotteryRegistration lotteryRegistration){
         lotteryService.addLottery(lotteryRegistration);
     }
-    @RequestMapping(value = "/stop-registration", method = RequestMethod.POST)
-    public LotteryRegistration getLotteryByIdRegistrationStop(@RequestBody Long id){
-        return lotteryService.get(id);
-    }
-
-    @RequestMapping(value = "/choose-winner", method = RequestMethod.POST)
-    public LotteryRegistration getLotteryByIdStartLottery(@RequestBody Long id){
-        return lotteryService.get(id);
-    }
+//    @RequestMapping(value = "/stop-registration", method = RequestMethod.POST)
+//    public LotteryRegistration getLotteryByIdRegistrationStop(@RequestBody Long id){
+//        return lotteryService.get(id);
+//    }
+//
+//    @RequestMapping(value = "/choose-winner", method = RequestMethod.POST)
+//    public LotteryRegistration getLotteryByIdStartLottery(@RequestBody Long id){
+//        return lotteryService.get(id);
+//    }
 
 }

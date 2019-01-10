@@ -23,7 +23,7 @@ public class UserController {
         userService.add(usersRegistration);
     }
     @GetMapping
-    public Collection<UsersView> users() {
+    public Collection<UsersRegistration> users() {
         return userService.users();
     }
 
