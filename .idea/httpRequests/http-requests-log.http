@@ -1,3 +1,91 @@
+PUT http://localhost:8080/register/assign?userId=2&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": 22 }
+
+<> 2019-01-10T054923.200.json
+
+###
+
+PUT http://localhost:8080/register/assign?userId=1&lotteryId=2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": 22 }
+
+<> 2019-01-10T044930.200.json
+
+###
+
+POST http://localhost:8080/choose-winner?id=22
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": 22 }
+
+<> 2019-01-10T031742.400.json
+
+###
+
+PUT http://localhost:8080/choose-winner?id=22
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-10T031606.405.json
+
+###
+
+PUT http://localhost:8080/register/assign?userId=8&lotteryId=7
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-10T015619.200.json
+
+###
+
+GET http://localhost:8080/start-registration?userId=8&lotteryId=4
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-10T013922.200.json
+
+###
+
+GET http://localhost:8080/start-registration?userId=8&lotteryId=4
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-10T013459.500.json
+
+###
+
+GET http://localhost:8080/start-registration?userId=8&lotteryId=4
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "title": "New Lotterty test 1",   "limit": 1111 }
+
+<> 2019-01-10T012435.200.json
+
+###
+
 PUT http://localhost:8080/register/assign?userId=8&lotteryId=4
 Accept: */*
 Cache-Control: no-cache
@@ -437,88 +525,6 @@ Content-Type: application/json
 {      "email": "352@gmail.com",      "age": 18,   "code": "asdas323xcf" }
 
 <> 2019-01-08T103603.200.json
-
-###
-
-POST http://localhost:8080/register
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "email": "352@gmail.com",      "age": 18,   "code": "asdas323xcf" }
-
-###
-
-POST http://localhost:8080/register
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "email": "owned.by.dz@gmail.com",      "age": 18,   "code": "asdasd892xcf" }
-
-###
-
-GET http://localhost:8080/register
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{   "title": "New Lottery 2",   "limit": 500222}
-
-<> 2019-01-08T103417.200.json
-
-###
-
-GET http://localhost:8080/start-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{   "title": "New Lottery 2",   "limit": 500222}
-
-<> 2019-01-07T031154.200.json
-
-###
-
-POST http://localhost:8080/start-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{   "title": "New Lottery 2",   "limit": 500222}
-
-###
-
-GET http://localhost:8080/start-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{   "title": "New Lottery 2",   "limit": 500222}
-
-<> 2019-01-07T031136.200.json
-
-###
-
-GET http://localhost:8080/start-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{   "title": "New Lottery 2",   "limit": 500222}
-
-<> 2019-01-07T031051.200.json
-
-###
-
-GET http://localhost:8080/start-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{   "title": "New Lottery 2",   "limit": 500222}
-
-<> 2019-01-07T012946.200.json
 
 ###
 
