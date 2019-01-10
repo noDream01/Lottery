@@ -1,5 +1,6 @@
 package lv.lottery.users;
 
+import lv.lottery.registration.LotteryDAOImplementation;
 import lv.lottery.registration.LotteryRegistration;
 import lv.lottery.registration.LotteryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,15 @@ public class UserService {
 
 //    private final LotteryService lotteryService;
     private final UsersDAOImplementation usersDAO;
+    private final LotteryDAOImplementation lotteryDAO;
 
     private Long lastId = 0L;
 
     @Autowired
-    public UserService(UsersDAOImplementation usersDAO){
+    public UserService(UsersDAOImplementation usersDAO, LotteryDAOImplementation lotteryDAO){
 //        this.lotteryService = lotteryService;
         this.usersDAO = usersDAO;
+        this.lotteryDAO = lotteryDAO;
     }
 
     public Long add(UsersRegistration usersRegistration) {
@@ -69,16 +72,18 @@ public class UserService {
     }
 
     public boolean assign(Long userId, Long lotteryId) {
-        Optional<UsersRegistration> user = usersDAO.getById(userId);
+        Optional<UsersRegistration> wrappedUser = this.get(userId);
+        Optional<LotteryRegistration> wrappedLottery = lotteryDAO.getById(lotteryId);
 
 //        Optional<UsersRegistration> wrappedUser = this.get(userId);
 //        Optional<LotteryRegistration> wrappedLottery = userDao.getById(userId);
 
-        if (user.isPresent()) {
-            UsersRegistration unwrapped = user.get();
-            unwrapped.setAssignedLotteryId(lotteryId);
+        if (wrappedUser.isPresent() && wrappedLottery.isPresent()) {
 
-            usersDAO.update(unwrapped);
+            UsersRegistration usersRegistration = wrappedUser.get();
+            usersRegistration.setAssignedLotteryId(wrappedLottery.get());
+
+            this.update(usersRegistration);
             return true;
         } else {
             return false;

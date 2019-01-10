@@ -1,5 +1,7 @@
 package lv.lottery.users;
 
+import lv.lottery.registration.LotteryRegistration;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -17,12 +19,16 @@ public class UsersRegistration {
     private Byte age;
     @Column(name = "code")
     private String code;
-    @Column(name = "assigned_lottery_id")
-    private Long assignedLotteryId;
+//    @Column(name = "assigned_lottery_id")
+//    private Long assignedLotteryId;
+
+    @ManyToOne
+    @JoinColumn(name = "assigned_lottery_id")
+    private LotteryRegistration assignedLotteryId;
 
 
 
-    public UsersRegistration(Long id, String email, Byte age, String code, Long assignedLotteryId) {
+    public UsersRegistration(Long id, String email, Byte age, String code, LotteryRegistration assignedLotteryId) {
         this.id = id;
         this.email = email;
         this.age = age;
@@ -66,11 +72,11 @@ public class UsersRegistration {
         this.code = code;
     }
 
-    public Long getAssignedLotteryId() {
+    public LotteryRegistration getAssignedLotteryId() {
         return assignedLotteryId;
     }
 
-    public void setAssignedLotteryId(Long assignedLotteryId) {
+    public void setAssignedLotteryId(LotteryRegistration assignedLotteryId) {
         this.assignedLotteryId = assignedLotteryId;
     }
 
@@ -83,11 +89,31 @@ public class UsersRegistration {
                 Objects.equals(email, usersRegistration.email) &&
                 Objects.equals(age, usersRegistration.age) &&
                 Objects.equals(code, usersRegistration.code) &&
-                Objects.equals(assignedLotteryId, usersRegistration.assignedLotteryId);
+                Objects.equals(assignedLotteryId.getId(), usersRegistration.assignedLotteryId.getId());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, email, age, code, assignedLotteryId);
+    }
+
+    @Override
+    public String toString() {
+        return "UsersRegistration{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", code='" + code + '\'' +
+                ", assignedLotteryId=" + assignedLotteryId +
+                ", lotteryRegistration=" +(assignedLotteryId !=null ? assignedLotteryId.getId() : "") +
+                '}';
+    }
+
+    public LotteryRegistration getLotteryRegistration() {
+        return assignedLotteryId;
+    }
+
+    public void setLotteryRegistration(LotteryRegistration assignedLotteryId) {
+        this.assignedLotteryId = assignedLotteryId;
     }
 }

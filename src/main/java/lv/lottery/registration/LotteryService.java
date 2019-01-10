@@ -1,6 +1,7 @@
 package lv.lottery.registration;
 
 import lv.lottery.users.UsersDAOImplementation;
+import lv.lottery.users.UsersRegistration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -44,6 +45,19 @@ public class LotteryService {
         lotteryRegistration.setId(id);
         lotteryDAOImplementation.update(lotteryRegistration);
     }
+
+
+//    public void assignLottery(Long lotteryId, Long userId) {
+//        Optional<LotteryRegistration> wrappedLottery = this.get(userId);
+//        Optional<UsersRegistration> wrappedUser = usersDAOImplementation.getById(userId);
+//
+//        if (wrappedUser.isPresent() && wrappedLottery.isPresent()) {
+//            LotteryRegistration lotteryRegistration = wrappedLottery.get();
+//            lotteryRegistration.getUsersRegistrations().add(wrappedUser.get());
+//
+//            lotteryDAOImplementation.update(lotteryRegistration);
+//        }
+//    }
 
 //    public void assignUser(Long lotteryId, Long userId) {
 //        Optional<LotteryRegistration> wrappedLottery = this.get(lotteryId);
