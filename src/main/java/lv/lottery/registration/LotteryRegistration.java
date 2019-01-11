@@ -17,6 +17,8 @@ public class LotteryRegistration {
     public Integer limit;
     @Column(name = "created_date")
     private Date createdDate;
+    @Column(name = "regStatus")
+    public Boolean regStatus;
 
     @Override
     public String toString() {
@@ -25,6 +27,7 @@ public class LotteryRegistration {
                 ", title='" + title + '\'' +
                 ", limit=" + limit +
                 ", createdDate=" + createdDate +
+                ", regStatus=" + regStatus +
                 '}';
     }
 
@@ -46,11 +49,12 @@ public class LotteryRegistration {
         this.limit = limit;
     }
 
-    public LotteryRegistration(Long id, String title, Integer limit, Date createdDate) {
+    public LotteryRegistration(Long id, String title, Integer limit, Date createdDate, Boolean regStatus) {
         this.id = id;
         this.title = title;
         this.limit = limit;
         this.createdDate = createdDate;
+        this.regStatus = regStatus;
 
     }
 
@@ -62,12 +66,13 @@ public class LotteryRegistration {
         return Objects.equals(id, that.id) &&
                 Objects.equals(title, that.title) &&
                 Objects.equals(limit, that.limit) &&
-                Objects.equals(createdDate, that.createdDate);
+                Objects.equals(createdDate, that.createdDate) &&
+                Objects.equals(regStatus, that.regStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, limit, createdDate);
+        return Objects.hash(id, title, limit, createdDate, regStatus);
     }
 
     public Long getId() {

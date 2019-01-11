@@ -24,16 +24,16 @@ public class UsersRegistration {
 
     @ManyToOne
     @JoinColumn(name = "assigned_lottery_id")
-    private LotteryRegistration assignedLotteryId;
+    private LotteryRegistration lottery;
 
 
 
-    public UsersRegistration(Long id, String email, Byte age, String code, LotteryRegistration assignedLotteryId) {
+    public UsersRegistration(Long id, String email, Byte age, String code, LotteryRegistration lottery) {
         this.id = id;
         this.email = email;
         this.age = age;
         this.code = code;
-        this.assignedLotteryId = assignedLotteryId;
+        this.lottery = lottery;
     }
 
     public UsersRegistration(){
@@ -72,14 +72,6 @@ public class UsersRegistration {
         this.code = code;
     }
 
-    public LotteryRegistration getAssignedLotteryId() {
-        return assignedLotteryId;
-    }
-
-    public void setAssignedLotteryId(LotteryRegistration assignedLotteryId) {
-        this.assignedLotteryId = assignedLotteryId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -89,12 +81,12 @@ public class UsersRegistration {
                 Objects.equals(email, usersRegistration.email) &&
                 Objects.equals(age, usersRegistration.age) &&
                 Objects.equals(code, usersRegistration.code) &&
-                Objects.equals(assignedLotteryId.getId(), usersRegistration.assignedLotteryId.getId());
+                Objects.equals(lottery.getId(), usersRegistration.lottery.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, age, code, assignedLotteryId);
+        return Objects.hash(id, email, age, code, lottery);
     }
 
     @Override
@@ -104,16 +96,15 @@ public class UsersRegistration {
                 ", email='" + email + '\'' +
                 ", age=" + age +
                 ", code='" + code + '\'' +
-                ", assignedLotteryId=" + assignedLotteryId +
-                ", lotteryRegistration=" +(assignedLotteryId !=null ? assignedLotteryId.getId() : "") +
+                ", lottery=" +(lottery !=null ? lottery.getId() : "") +
                 '}';
     }
 
-    public LotteryRegistration getLotteryRegistration() {
-        return assignedLotteryId;
+    public LotteryRegistration getLottery() {
+        return lottery;
     }
 
-    public void setLotteryRegistration(LotteryRegistration assignedLotteryId) {
-        this.assignedLotteryId = assignedLotteryId;
+    public void setLottery(LotteryRegistration lottery) {
+        this.lottery = lottery;
     }
 }

@@ -81,7 +81,7 @@ public class UserService {
         if (wrappedUser.isPresent() && wrappedLottery.isPresent()) {
 
             UsersRegistration usersRegistration = wrappedUser.get();
-            usersRegistration.setAssignedLotteryId(wrappedLottery.get());
+            usersRegistration.setLottery(wrappedLottery.get());
 
             this.update(usersRegistration);
             return true;
