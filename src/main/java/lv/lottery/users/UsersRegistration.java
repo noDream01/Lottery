@@ -38,12 +38,13 @@ public class UsersRegistration {
         this.lottery = lottery;
     }
 
-    public UsersRegistration(Long id, String email, Byte age, String code, Long assignedLotteryId) {
+    public UsersRegistration(Long id, String email, Byte age, String code, Long assignedLotteryId, LotteryRegistration lottery) {
         this.id = id;
         this.email = email;
         this.age = age;
         this.code = code;
         this.assignedLotteryId = assignedLotteryId;
+        this.lottery = lottery;
     }
 
     public UsersRegistration(){
@@ -108,7 +109,7 @@ public class UsersRegistration {
                 ", age=" + age +
                 ", code='" + code + '\'' +
                 ", assignedLotteryId=" + assignedLotteryId +
-                ", user=" + (lottery != null ? lottery.getId() : "") +
+                ", lottery=" + (lottery != null ? lottery.getId() : "") +
                 '}';
     }
 

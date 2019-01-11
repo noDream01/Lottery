@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @RestController
 public class LotteryController {
@@ -29,14 +30,21 @@ public class LotteryController {
     public void create(@RequestBody LotteryRegistration lotteryRegistration){
         lotteryService.addLottery(lotteryRegistration);
     }
+
+    @RequestMapping( value = "start-registration/{id}", method = RequestMethod.GET)
+    public Optional<LotteryRegistration> getById(@PathVariable Long id) {
+        return lotteryService.get(id);
+    }
 //    @RequestMapping(value = "/stop-registration", method = RequestMethod.POST)
 //    public LotteryRegistration getLotteryByIdRegistrationStop(@RequestBody Long id){
 //        return lotteryService.get(id);
 //    }
 //
-//    @RequestMapping(value = "/choose-winner", method = RequestMethod.POST)
-//    public LotteryRegistration getLotteryByIdStartLottery(@RequestBody Long id){
-//        return lotteryService.get(id);
+//    @RequestMapping(value = "/choose-winner", method = RequestMethod.GET)
+//    public Collection<> getLotteryWinner(){
+//
 //    }
+
+
 
 }

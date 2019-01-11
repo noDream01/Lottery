@@ -30,7 +30,7 @@ function createLottery() {
         method: "post",
         body: JSON.stringify({
             title: title,
-            limit: limit
+            limit: limit,
         }),
         headers: {
             "Content-Type": "application/json;charset=UTF-8"

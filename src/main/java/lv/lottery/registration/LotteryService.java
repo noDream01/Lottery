@@ -24,6 +24,7 @@ public class LotteryService {
 
     public Long addLottery(LotteryRegistration lotteryRegistration){
         lotteryRegistration.setCreatedDate(new Date());
+
 //        lastId++;
 //        lotteryRegistration.setId(lastId);
 
@@ -37,6 +38,7 @@ public class LotteryService {
     }
 
     public Optional<LotteryRegistration> get(Long id){
+
         return lotteryDAOImplementation.getById(id);
 
     }
@@ -46,29 +48,6 @@ public class LotteryService {
         lotteryDAOImplementation.update(lotteryRegistration);
     }
 
-
-//    public void assignLottery(Long lotteryId, Long userId) {
-//        Optional<LotteryRegistration> wrappedLottery = this.get(userId);
-//        Optional<UsersRegistration> wrappedUser = usersDAOImplementation.getById(userId);
-//
-//        if (wrappedUser.isPresent() && wrappedLottery.isPresent()) {
-//            LotteryRegistration lotteryRegistration = wrappedLottery.get();
-//            lotteryRegistration.getUsersRegistrations().add(wrappedUser.get());
-//
-//            lotteryDAOImplementation.update(lotteryRegistration);
-//        }
-//    }
-
-//    public void assignUser(Long lotteryId, Long userId) {
-//        Optional<LotteryRegistration> wrappedLottery = this.get(lotteryId);
-//        Optional<UsersRegistration> wrappedUser = usersDAOImplementation.getById(userId);
-//
-//        if (wrappedLottery.isPresent() && wrappedUser.isPresent()) {
-//            LotteryRegistration lottery = wrappedLottery.get();
-//            lottery.getTasks().add(wrappedTask.get());
-//
-//            userDaoImplementation.update(user);
-//        }
 
 
 }

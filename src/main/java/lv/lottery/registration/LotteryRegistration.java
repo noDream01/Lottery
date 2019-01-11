@@ -24,9 +24,13 @@ public class LotteryRegistration {
     private Date createdDate;
     @Column(name = "regStatus")
     public Boolean regStatus;
+    @Column(name = "winner")
+    private String winner;
+
+
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "lottery")
-    private List<UsersRegistration> users;
+    private List<UsersRegistration> users = new ArrayList<>();
 
     public List<UsersRegistration> getUsers() {
         return users;
@@ -44,7 +48,8 @@ public class LotteryRegistration {
                 ", limit=" + limit +
                 ", createdDate=" + createdDate +
                 ", regStatus=" + regStatus +
-                ", tasks=" + users.stream().map(UsersRegistration::getId).map(Objects::toString).collect(Collectors.joining(", ")) +
+                ", users=" + users.stream().map(UsersRegistration::getId).map(Objects::toString).collect(Collectors.joining(", ")) +
+                ", winner=" + winner +
                 '}';
     }
 
@@ -72,12 +77,13 @@ public class LotteryRegistration {
         this.limit = limit;
     }
 
-    public LotteryRegistration(Long id, String title, Integer limit, Date createdDate, Boolean regStatus) {
+    public LotteryRegistration(Long id, String title, Integer limit, Date createdDate, Boolean regStatus,String winner) {
         this.id = id;
         this.title = title;
         this.limit = limit;
         this.createdDate = createdDate;
         this.regStatus = regStatus;
+        this.winner = winner;
 
     }
 
@@ -90,12 +96,13 @@ public class LotteryRegistration {
                 Objects.equals(title, that.title) &&
                 Objects.equals(limit, that.limit) &&
                 Objects.equals(createdDate, that.createdDate) &&
-                Objects.equals(regStatus, that.regStatus);
+                Objects.equals(regStatus, that.regStatus) &&
+                Objects.equals(winner, that.winner);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, limit, createdDate, regStatus);
+        return Objects.hash(id, title, limit, createdDate, regStatus, winner);
     }
 
     public Long getId() {
@@ -115,5 +122,13 @@ public class LotteryRegistration {
     }
 
     public LotteryRegistration() {
+    }
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
     }
 }

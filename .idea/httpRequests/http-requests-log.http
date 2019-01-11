@@ -1,3 +1,166 @@
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{            "email": "test@test.com",      "age": 22,      "code": "e2323", "assignedLotteryId": 1 }
+
+###
+
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{            "email": "test@test.com",      "age": 22,      "code": "e2323" }
+
+<> 2019-01-11T054150.500.json
+
+###
+
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{            "email": "test@test.com",      "age": 22,      "code": "e2323" }
+
+<> 2019-01-11T053851.500.json
+
+###
+
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{            "email": "test@test.com",      "age": 22,      "code": "e2323" }
+
+<> 2019-01-11T052158.500.json
+
+###
+
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{            "email": "test@test.com",      "age": 22,      "code": "e2323",   "lottery": 1 }
+
+<> 2019-01-11T051913.400.json
+
+###
+
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{            "email": "test@test.com",      "age": 22,      "code": "e2323",   "lottery": 1 }
+
+<> 2019-01-11T045817.400.json
+
+###
+
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{            "email": "test@test.com",      "age": 22,      "code": "e2323",   "lottery": 1 }
+
+<> 2019-01-11T045459.400.json
+
+###
+
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{            "email": "test@test.com",      "age": 22,      "code": "e2323",    "assignedLotteryId": null,   "lottery": 1 }
+
+<> 2019-01-11T044639.400.json
+
+###
+
+GET http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{            "email": "test@test.com",      "age": 22,      "code": "e2323",    "assignedLotteryId": null,   "lottery": 1 }
+
+<> 2019-01-11T044618.200.json
+
+###
+
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{            "email": "test@test.com",      "age": 22,      "code": "e2323",    "assignedLotteryId": null,   "lottery": 1 }
+
+<> 2019-01-11T044240.400.json
+
+###
+
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{         "email": "test@test.com",   "age": 22,   "code": "e2323",   "lottery": 1 }
+
+<> 2019-01-11T042824.400.json
+
+###
+
+POST http://localhost:8080/register?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{         "email": "test@test.com",   "age": 22,   "code": "e2323",   "lottery": 1 }
+
+<> 2019-01-11T041846.400.json
+
+###
+
+GET http://localhost:8080/start-registration/1?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": 22 }
+
+<> 2019-01-11T034953.200.json
+
+###
+
+PUT http://localhost:8080/register/assign?userId=4&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": 22 }
+
+<> 2019-01-11T022700.200.json
+
+###
+
+PUT http://localhost:8080/register/assign?userId=3&lotteryId=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{      "id": 22 }
+
+<> 2019-01-11T022653.200.json
+
+###
+
 PUT http://localhost:8080/register/assign?userId=4&lotteryId=1
 Accept: */*
 Cache-Control: no-cache
@@ -380,159 +543,6 @@ Content-Type: application/json
 {      "title": "New Lotterty test 1",   "limit": 1111 }
 
 <> 2019-01-09T015852.200.json
-
-###
-
-GET http://localhost:8080/register/assign?userId=1&lotteryId=1
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "title": "New Lotterty test 1",   "limit": 1111 }
-
-<> 2019-01-09T015842.405.json
-
-###
-
-PUT http://localhost:8080/register/assign?userId=1&lotteryId=1
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "title": "New Lotterty test 1",   "limit": 1111 }
-
-<> 2019-01-09T015834.200.json
-
-###
-
-GET http://localhost:8080/register?userId=1&lotteryId=2
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "title": "New Lotterty test 1",   "limit": 1111 }
-
-<> 2019-01-09T015804.200.json
-
-###
-
-GET http://localhost:8080/register?userId=1&lotteryId=2
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "title": "New Lotterty test 1",   "limit": 1111 }
-
-<> 2019-01-09T014250.200.json
-
-###
-
-PUT http://localhost:8080/register/assign?userId=1&lotteryId=2
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "title": "New Lotterty test 1",   "limit": 1111 }
-
-<> 2019-01-09T014143.200.json
-
-###
-
-GET http://localhost:8080/start-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "title": "New Lotterty test 1",   "limit": 1111 }
-
-<> 2019-01-08T115217.200.json
-
-###
-
-POST http://localhost:8080/start-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "title": "New Lotterty test 1",   "limit": 1111 }
-
-###
-
-GET http://localhost:8080/start-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "id": "2" }
-
-<> 2019-01-08T115110.200.json
-
-###
-
-GET http://localhost:8080/start-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "id": "2" }
-
-<> 2019-01-08T115040.500.json
-
-###
-
-GET http://localhost:8080/start-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "id": "2" }
-
-<> 2019-01-08T114758.500.json
-
-###
-
-GET http://localhost:8080/stop-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "id": "2" }
-
-###
-
-POST http://localhost:8080/stop-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "id": "2" }
-
-###
-
-GET http://localhost:8080/stop-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "id": "2" }
-
-###
-
-GET http://localhost:8080/stop-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "id": "2" }
-
-###
-
-POST http://localhost:8080/stop-registration
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{      "id": "2" }
 
 ###
 

@@ -16,23 +16,32 @@ public class UserService {
 //    private Map<Long, UsersRegistration> userMap = new HashMap<>();
 
 //    private final LotteryService lotteryService;
+
+
     private final UsersDAOImplementation usersDAO;
     private final LotteryDAOImplementation lotteryDAO;
+    private LotteryRegistration lotteryRegistration;
 
     private Long lastId = 0L;
+//    private  LotteryRegistration lotteryRegistration;
+
+
 
     @Autowired
     public UserService(UsersDAOImplementation usersDAO, LotteryDAOImplementation lotteryDAO){
 //        this.lotteryService = lotteryService;
         this.usersDAO = usersDAO;
         this.lotteryDAO = lotteryDAO;
+
     }
 
     public Long add(UsersRegistration usersRegistration) {
-//        lastId++;
-//        usersRegistration.setId(lastId);
 
-//        usersDAO.insert(usersRegistration);
+        Optional<LotteryRegistration> wrappedLottery = lotteryDAO.getById(usersRegistration.getAssignedLotteryId());
+        if (wrappedLottery.isPresent()) {
+            usersRegistration.setLottery(wrappedLottery.get());
+        }
+
         return usersDAO.insert(usersRegistration);
     }
 
