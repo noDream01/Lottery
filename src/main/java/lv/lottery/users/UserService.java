@@ -44,7 +44,11 @@ public class UserService {
         return usersDAO.getById(id);
     }
 
-//    public UsersView get(Long id) {
+//    public Optional<UsersRegistration> getByAssigned(Long assignedId){
+//        return usersDAO.getByAssignedId(assignedId);
+//    }
+
+//    public UsersRegistration get(Long id) {
 //        Optional<UsersRegistration> user = usersDAO.getById(id);
 //
 //        if (user.isPresent()) {
@@ -54,7 +58,7 @@ public class UserService {
 //        }
 //    }
 //
-//    private UsersView mapToTaskView(UsersRegistration usersRegistration) {
+//    private UsersRegistration mapToTaskView(UsersRegistration usersRegistration) {
 //        LotteryRegistration lotteryRegistration = lotteryService.get(usersRegistration.getAssignedLotteryId());
 //
 //        return new UsersView(
@@ -72,22 +76,31 @@ public class UserService {
     }
 
     public boolean assign(Long userId, Long lotteryId) {
+
         Optional<UsersRegistration> wrappedUser = this.get(userId);
         Optional<LotteryRegistration> wrappedLottery = lotteryDAO.getById(lotteryId);
 
-//        Optional<UsersRegistration> wrappedUser = this.get(userId);
-//        Optional<LotteryRegistration> wrappedLottery = userDao.getById(userId);
-
         if (wrappedUser.isPresent() && wrappedLottery.isPresent()) {
+            UsersRegistration user = wrappedUser.get();
+            user.setLottery(wrappedLottery.get());
 
-            UsersRegistration usersRegistration = wrappedUser.get();
-            usersRegistration.setLottery(wrappedLottery.get());
-
-            this.update(usersRegistration);
+            this.update(user);
             return true;
-        } else {
-            return false;
         }
+
+        return false;
+//        Optional<UsersRegistration> usersRegistration = usersDAO.getById(userId);
+//
+//        if (usersRegistration.isPresent()) {
+//            UsersRegistration unwrapped = usersRegistration.get();
+//            unwrapped.setLottery(lotteryId);
+//
+//            usersDAO.update(unwrapped);
+//            return true;
+//        } else {
+//            return false;
+//
+//        }
     }
 
 }

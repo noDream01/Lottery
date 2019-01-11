@@ -11,4 +11,6 @@ public interface BaseDAO<T> {
     Long insert(T user);
 
     void update(T user);
+
+//    Optional<T> getByAssignedId(Long assignedId, Class<T> clazz);
 }

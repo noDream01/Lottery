@@ -19,21 +19,31 @@ public class UsersRegistration {
     private Byte age;
     @Column(name = "code")
     private String code;
-//    @Column(name = "assigned_lottery_id")
-//    private Long assignedLotteryId;
+    @Column(name = "assigned_lottery_id")
+    private Long assignedLotteryId;
+
+//    @ManyToOne
+//    @JoinColumn(name = "assigned_lottery_id")
+//    private LotteryRegistration lottery;
 
     @ManyToOne
-    @JoinColumn(name = "assigned_lottery_id")
+    @JoinColumn(name ="assigned_lot_id")
     private LotteryRegistration lottery;
 
+    public LotteryRegistration getLottery() {
+        return lottery;
+    }
 
+    public void setLottery(LotteryRegistration lottery) {
+        this.lottery = lottery;
+    }
 
-    public UsersRegistration(Long id, String email, Byte age, String code, LotteryRegistration lottery) {
+    public UsersRegistration(Long id, String email, Byte age, String code, Long assignedLotteryId) {
         this.id = id;
         this.email = email;
         this.age = age;
         this.code = code;
-        this.lottery = lottery;
+        this.assignedLotteryId = assignedLotteryId;
     }
 
     public UsersRegistration(){
@@ -81,12 +91,13 @@ public class UsersRegistration {
                 Objects.equals(email, usersRegistration.email) &&
                 Objects.equals(age, usersRegistration.age) &&
                 Objects.equals(code, usersRegistration.code) &&
+                Objects.equals(assignedLotteryId, usersRegistration.assignedLotteryId) &&
                 Objects.equals(lottery.getId(), usersRegistration.lottery.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, age, code, lottery);
+        return Objects.hash(id, email, age, code, assignedLotteryId, lottery.getId());
     }
 
     @Override
@@ -96,15 +107,16 @@ public class UsersRegistration {
                 ", email='" + email + '\'' +
                 ", age=" + age +
                 ", code='" + code + '\'' +
-                ", lottery=" +(lottery !=null ? lottery.getId() : "") +
+                ", assignedLotteryId=" + assignedLotteryId +
+                ", user=" + (lottery != null ? lottery.getId() : "") +
                 '}';
     }
 
-    public LotteryRegistration getLottery() {
-        return lottery;
+    public Long getAssignedLotteryId() {
+        return assignedLotteryId;
     }
 
-    public void setLottery(LotteryRegistration lottery) {
-        this.lottery = lottery;
+    public void setAssignedLotteryId(Long assignedLotteryId) {
+        this.assignedLotteryId = assignedLotteryId;
     }
 }

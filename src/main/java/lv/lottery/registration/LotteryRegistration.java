@@ -1,8 +1,13 @@
 package lv.lottery.registration;
 
+import lv.lottery.users.UsersRegistration;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "DZ_LOTTERIES")
@@ -20,6 +25,17 @@ public class LotteryRegistration {
     @Column(name = "regStatus")
     public Boolean regStatus;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lottery")
+    private List<UsersRegistration> users;
+
+    public List<UsersRegistration> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<UsersRegistration> users) {
+        this.users = users;
+    }
+
     @Override
     public String toString() {
         return "LotteryRegistration{" +
@@ -28,10 +44,17 @@ public class LotteryRegistration {
                 ", limit=" + limit +
                 ", createdDate=" + createdDate +
                 ", regStatus=" + regStatus +
+                ", tasks=" + users.stream().map(UsersRegistration::getId).map(Objects::toString).collect(Collectors.joining(", ")) +
                 '}';
     }
 
+    public Boolean getRegStatus() {
+        return regStatus;
+    }
 
+    public void setRegStatus(Boolean regStatus) {
+        this.regStatus = regStatus;
+    }
 
     public String getTitle() {
         return title;

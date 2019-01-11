@@ -46,6 +46,11 @@ public class UsersDAOImplementation extends BaseDAOImplementation<UsersRegistrat
         return super.getById(id, UsersRegistration.class);
     }
 
+//    public Optional<UsersRegistration> getByAssignedId(Long assignedId) {
+//
+//        return  super.getByAssignedId(assignedId, UsersRegistration.class);
+//    }
+
 //    @Override
 //    public Long insert(UsersRegistration usersRegistration) {
 //        Session session = sessionFactory.openSession();

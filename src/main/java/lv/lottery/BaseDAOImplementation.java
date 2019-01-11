@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public abstract class BaseDAOImplementation<T> implements BaseDAO<T> {
-    private final SessionFactory sessionFactory;
+    public SessionFactory sessionFactory;
 
     protected BaseDAOImplementation(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
@@ -25,7 +25,7 @@ public abstract class BaseDAOImplementation<T> implements BaseDAO<T> {
         query.select(query.from(clazz));
 
         List<T> users = session.createQuery(query).getResultList();
-        session.close();
+//        session.close();
         return users;
     }
 
@@ -35,7 +35,7 @@ public abstract class BaseDAOImplementation<T> implements BaseDAO<T> {
 
         T obj = session.get(clazz, id);
 
-        session.close();
+//        session.close();
         return Optional.ofNullable(obj);
     }
 
@@ -62,4 +62,15 @@ public abstract class BaseDAOImplementation<T> implements BaseDAO<T> {
         tx.commit();
         session.close();
     }
+
+//    @Override
+//    public Optional<T> getByAssignedId(Long assignedId, Class<T> clazz) {
+//        Session session = sessionFactory.openSession();
+//
+//        T obj = session.get(clazz, assignedId);
+//
+//        session.close();
+//        return Optional.ofNullable(obj);
+//
+//    }
 }
